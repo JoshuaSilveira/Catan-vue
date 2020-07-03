@@ -1,13 +1,17 @@
 <template>
   <div v-bind:class="getClass()" class="hex">
-    <p>{{tile.token}}</p>
+    <Token v-bind:num="tile.token" />
   </div>
 </template>
 
 <script>
+import Token from "./Token";
 export default {
   name: "Tile",
   props: ["tile"],
+  components:{
+    Token
+  },
   methods: {
     getClass() {
       return {
@@ -40,13 +44,7 @@ export default {
   background-color: #6c6;
   position: relative;
 }
-.hex p {
-  text-align: center;
-  font-size: 1.4em;
-  font-weight: bold;
-  color: white;
-  text-shadow: 2px 2px #000000;
-}
+
 .hex:after {
   content: "";
   width: 0;

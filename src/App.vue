@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-    <Board v-bind:tiles="tiles" />
+    <div class="title">
+      <h1>CATAN</h1>
+    </div>
+    <Legend />
+    <div class="center"><Board v-bind:tiles="tiles" /></div>
+    
+    
   </div>
 </template>
 
 <script>
 import Board from "./components/Board";
+import Legend from "./components/Legend";
+
 export default {
   name: "App",
   components: {
-    Board
+    Board,
+    Legend
   },
   created() {
     this.generateTiles();
@@ -71,7 +80,7 @@ export default {
           tileToken = tokenVal[randomNum];
           tokenVal.splice(randomNum, 1);
         }
-        
+
         var tile = {
           id: i,
           type: tileTerrain,
@@ -91,4 +100,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: absolute;
+  text-align: center;
+  left:30%;
+  color:gold;
+  text-shadow: goldenrod;
+  background: rgb(255, 56, 6);
+  width: 400px;
+}
+</style>

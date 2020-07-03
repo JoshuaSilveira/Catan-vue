@@ -78,15 +78,16 @@ export default {
 .boundary {
   width: 724px;
   position: absolute;
-  top: 20px;
-  
+  top: 223px;
+  left:247px;
  
   z-index: -1;
 }
 .board{
     position: relative;
     top: 83px;
-    left:92px
-    }
+    left:333px
+
+}
 
 </style>
